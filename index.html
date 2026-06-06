@@ -44,7 +44,79 @@
       background-size: 128px 128px;
     }
 
-    /* NAV */
+    .featured-banner {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 101;
+      background: var(--accent);
+      padding: 0 24px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .featured-banner:hover { opacity: 0.88; }
+
+    .banner-inner {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .banner-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    .banner-label {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.8);
+      white-space: nowrap;
+    }
+
+    .banner-name {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: white;
+      white-space: nowrap;
+    }
+
+    .banner-divider {
+      width: 1px;
+      height: 14px;
+      background: rgba(255,255,255,0.35);
+    }
+
+    .banner-cta {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: white;
+      font-weight: 600;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .banner-cta svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    @media (max-width: 600px) {
+      .banner-label { display: none; }
+      .banner-divider { display: none; }
+    }
+
+        /* NAV */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -219,6 +291,103 @@
       height: 8px;
       background: #2e5c8a;
       opacity: 1;
+    }
+
+
+    /* HERO CALLOUT */
+    .hero-callout {
+      padding: 120px 48px 0;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .callout-card {
+      background: var(--ink);
+      border-radius: 28px;
+      padding: 52px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .callout-card::before {
+      content: '';
+      position: absolute;
+      bottom: -80px;
+      right: 80px;
+      width: 260px;
+      height: 260px;
+      background: var(--accent);
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    .callout-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .callout-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.6rem;
+      letter-spacing: -0.03em;
+      color: white;
+      margin-bottom: 16px;
+      line-height: 1.1;
+    }
+
+    .callout-desc {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.7;
+      margin-bottom: 32px;
+      max-width: 420px;
+    }
+
+    .callout-badge {
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .callout-badge img {
+      height: 44px;
+      border-radius: 10px;
+      transition: opacity 0.2s, transform 0.15s;
+      filter: brightness(1.1);
+    }
+    .callout-badge:hover img { opacity: 0.85; transform: translateY(-2px); }
+
+    .callout-icon-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .callout-icon {
+      width: 140px;
+      height: 140px;
+      border-radius: 32px;
+      display: block;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+    }
+
+    @media (max-width: 600px) {
+      .hero-callout { padding: 100px 20px 0; }
+      .callout-card { grid-template-columns: 1fr; padding: 36px; gap: 28px; }
+      .callout-icon-wrap { justify-content: flex-start; }
+      .callout-icon { width: 96px; height: 96px; border-radius: 22px; }
+      .callout-title { font-size: 1.9rem; }
     }
 
     /* APP SECTION */
@@ -407,7 +576,7 @@
       footer { flex-direction: column; gap: 12px; text-align: center; padding: 28px 24px; }
     }
   </style>
-<script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
 
@@ -415,6 +584,22 @@
     <a class="nav-logo" href="#">Mind Upgrade</a>
     <a class="nav-cta" href="#apps">Our Apps</a>
   </nav>
+
+  <section class="hero-callout">
+    <div class="callout-card">
+      <div class="callout-content">
+        <p class="callout-eyebrow">Featured App</p>
+        <h2 class="callout-title">Stoicize:<br>Mindset Shift</h2>
+        <p class="callout-desc">Type or speak what's weighing on you. Stoicize reframes it through the lens of stoic philosophy — the way Marcus Aurelius would.</p>
+        <a class="callout-badge" href="https://apps.apple.com/us/app/stoicize-mindset-shift/id6762586048" target="_blank">
+          <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" />
+        </a>
+      </div>
+      <div class="callout-icon-wrap">
+        <img class="callout-icon" src="stoicize-icon.png" alt="Stoicize App Icon" />
+      </div>
+    </div>
+  </section>
 
   <section class="hero">
     <svg class="hero-graphic" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
