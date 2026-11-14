@@ -483,6 +483,17 @@
     }
     .app-store-btn:hover img { opacity: 0.85; transform: translateY(-1px); }
 
+    .app-policy-link {
+      display: inline-block;
+      margin-top: 14px;
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .app-policy-link:hover { color: var(--accent); border-color: var(--accent); }
+
     .app-coming-label {
       font-size: 0.72rem;
       font-weight: 500;
@@ -653,6 +664,7 @@
             <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" style="height:38px; border-radius:6px;" />
           </a>
         </div>
+        <a class="app-policy-link" href="/privacy/stoicize">Privacy Policy</a>
       </div>
 
       <!-- Ladder -->
@@ -709,7 +721,7 @@
 
   <footer>
     <span class="footer-logo">Mind Upgrade LLC</span>
-    <span class="footer-copy">© 2026 Mind Upgrade LLC · Post Falls, ID · <a href="mailto:jason@mindupgradeapps.com" style="color:inherit;">jason@mindupgradeapps.com</a></span>
+    <span class="footer-copy">© 2026 Mind Upgrade LLC · Post Falls, ID · <a href="mailto:jason@mindupgradeapps.com" style="color:inherit;">jason@mindupgradeapps.com</a> · <a href="/privacy" style="color:inherit;">Privacy</a></span>
   </footer>
 
 </body>
